@@ -38,7 +38,3 @@ const newGames = `games${YOUR_API_KEY}&dates=${lastYear},${currentDate}&ordering
 export const popularGamesURL = () => `${base_url}${popular_games}`;
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${newGames}`;
-
-console.log(popularGamesURL());
-console.log(upcomingGamesURL());
-console.log(newGamesURL());
