@@ -15,7 +15,6 @@ const Home = () => {
   }, [dispatch]);
 
   const { popular, newGames, upcomming } = useSelector((state) => state.games);
-  console.log(upcomming);
 
   return (
     <GameList>
