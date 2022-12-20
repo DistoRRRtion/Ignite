@@ -10,9 +10,10 @@ import { loadDetail } from "../actions/detailAction";
 import { Link } from "react-router-dom";
 
 const Game = ({ name, released, id, image }) => {
-  // load detail
+  // load detail handler
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
+    document.body.style.overflow = "hidden"; // убираем 2 скролл
     dispatch(loadDetail(id));
   };
 
@@ -33,6 +34,7 @@ const StyledGame = styled(motion.div)`
   border-radius: 1rem;
   text-align: center;
   cursor: pointer;
+  overflow: hidden;
   img {
     width: 100%;
     height: 40vh;
