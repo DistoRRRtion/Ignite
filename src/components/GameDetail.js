@@ -31,7 +31,7 @@ const GameDetail = () => {
           <p>{game.description_raw}</p>
         </Description>
         <div className="gallery">
-          {screen.map((screen) => (
+          {screen.results.map((screen) => (
             <img src={screen.image} alt={game.name} key={screen.id} />
           ))}
         </div>
