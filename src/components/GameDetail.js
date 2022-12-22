@@ -3,10 +3,16 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { smallImage } from "../util";
+// images
+import playstaion from "../img/playstation.svg";
+import xbox from "../img/xbox.svg";
+import nintendo from "../img/nintendo.svg";
+import steam from "../img/steam.svg";
+import apple from "../img/apple.svg";
+import gamepad from "../img/gamepad.svg";
 
 const GameDetail = ({ pathId }) => {
   const navigate = useNavigate();
-  console.log(pathId);
 
   // exit detail
   const exitDetailHandler = (e) => {
@@ -18,8 +24,27 @@ const GameDetail = ({ pathId }) => {
     }
   };
 
-  // Data
+  // data
   const { screen, game, isLoading } = useSelector((state) => state.detail);
+
+  // get platform images
+  const getPlatform = (platform) => {
+    // if (platform == "playstaion") return playstaion;
+    switch (platform) {
+      case "PlayStation 4":
+        return playstaion;
+      case "Xbox One":
+        return xbox;
+      case "Nintendo Switch":
+        return nintendo;
+      case "PC":
+        return steam;
+      case "iOS":
+        return apple;
+      default:
+        return gamepad;
+    }
+  };
 
   return (
     <>
@@ -35,7 +60,11 @@ const GameDetail = ({ pathId }) => {
                 <h3>Platforms :</h3>
                 <Platforms>
                   {game.platforms.map((data) => (
-                    <h3 key={data.platform.id}>{data.platform.name}</h3>
+                    <img
+                      key={data.platform.id}
+                      src={getPlatform(data.platform.name)}
+                      alt={data.platform.name}
+                    ></img>
                   ))}
                 </Platforms>
               </Info>
