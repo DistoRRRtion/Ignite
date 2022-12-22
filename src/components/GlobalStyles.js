@@ -49,6 +49,12 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
 
+  input {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    outline: none;
+  }
+
 `;
 
 export default GlobalStyle;

@@ -141,6 +141,7 @@ const Detail = styled(motion.div)`
   position: absolute;
   left: 10%;
   color: black;
+  margin-top: 2rem;
   img {
     width: 100%;
   }
