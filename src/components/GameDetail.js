@@ -3,18 +3,23 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { smallImage } from "../util";
-// images
+// images platform
 import playstaion from "../img/playstation.svg";
 import xbox from "../img/xbox.svg";
 import nintendo from "../img/nintendo.svg";
 import steam from "../img/steam.svg";
 import apple from "../img/apple.svg";
 import gamepad from "../img/gamepad.svg";
+// images star
+import starFull from "../img/star-full.png";
+import starEmpty from "../img/star-empty.png";
 
 const GameDetail = ({ pathId }) => {
-  const navigate = useNavigate();
+  //🔥 data
+  const { screen, game, isLoading } = useSelector((state) => state.detail);
 
-  // exit detail
+  //🔥 exit detail
+  const navigate = useNavigate();
   const exitDetailHandler = (e) => {
     const element = e.target;
 
@@ -24,10 +29,7 @@ const GameDetail = ({ pathId }) => {
     }
   };
 
-  // data
-  const { screen, game, isLoading } = useSelector((state) => state.detail);
-
-  // get platform images
+  //🔥 get platform images
   const getPlatform = (platform) => {
     // if (platform == "playstaion") return playstaion;
     switch (platform) {
@@ -46,16 +48,32 @@ const GameDetail = ({ pathId }) => {
     }
   };
 
+  //🔥 get star images
+  const getStars = () => {
+    const rating = Math.floor(game.rating);
+    const star = [];
+
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        star.push(<img alt="star" src={starFull} key={i}></img>);
+      } else {
+        star.push(<img alt="star" src={starEmpty} key={i}></img>);
+      }
+    }
+
+    return star;
+  };
   return (
     <>
       {!isLoading && (
         <CardShadow onClick={exitDetailHandler} className="shadow">
           <Detail layoutId={pathId}>
             <Stats>
-              <div className="rating">
+              <Rating>
                 <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                 <p>Rating: {game.rating}</p>
-              </div>
+                {getStars()}
+              </Rating>
               <Info>
                 <h3>Platforms :</h3>
                 <Platforms>
@@ -100,7 +118,7 @@ const CardShadow = styled(motion.div)`
   width: 100%;
   min-height: 100vh;
   overflow-y: scroll;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
   left: 0;
@@ -132,6 +150,14 @@ const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+const Rating = styled(motion.div)`
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline;
+  }
 `;
 
 const Info = styled(motion.div)`
