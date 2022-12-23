@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 // style and animation
 import styled from "styled-components";
+import { fadeIn } from "../animation.js";
+
 // атрибут layout вместо layoutId <------
 import {
   motion,
@@ -32,7 +34,7 @@ const Home = () => {
   );
 
   return (
-    <GameList>
+    <GameList variants={fadeIn} initial="hidden" animate="show">
       <LayoutGroup type="crossfade">
         <AnimatePresence>
           {pathId && <GameDetail pathId={pathId} />}
