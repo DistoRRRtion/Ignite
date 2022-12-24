@@ -31,7 +31,6 @@ const GameDetail = ({ pathId }) => {
 
   //🔥 get platform images
   const getPlatform = (platform) => {
-    // if (platform == "playstaion") return playstaion;
     switch (platform) {
       case "PlayStation 4":
         return playstaion;
@@ -93,6 +92,11 @@ const GameDetail = ({ pathId }) => {
                 src={smallImage(game.background_image, 1280)}
                 alt={game.name}
               />
+              {/* <motion.img
+                layoutId={`image ${pathId}`}
+                src={game.background_image}
+                alt={game.name}
+              /> */}
             </Media>
             <Description>
               <p>{game.description_raw}</p>
@@ -100,11 +104,16 @@ const GameDetail = ({ pathId }) => {
             <div className="gallery">
               {screen.results.map((screen) => (
                 <img
-                  // src={screen.image}
                   src={smallImage(screen.image, 1280)}
                   alt={game.name}
                   key={screen.id}
                 />
+                // <img
+                //   // src={screen.image}
+                //   src={screen.image}
+                //   alt={game.name}
+                //   key={screen.id}
+                // />
               ))}
             </div>
           </Detail>
@@ -134,12 +143,12 @@ const CardShadow = styled(motion.div)`
 `;
 
 const Detail = styled(motion.div)`
-  width: 80%;
+  width: 70%;
   border-radius: 1rem;
-  padding: 2rem 5rem;
+  padding: 2rem 7rem;
   background: white;
   position: absolute;
-  left: 10%;
+  left: 15%;
   color: black;
   margin-top: 2rem;
   img {

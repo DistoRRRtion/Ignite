@@ -50,4 +50,4 @@ export const gameScreenshotURL = (game_id) =>
 //🔥 searched game
 export const searchGameURL = (game_name) =>
   `${base_url}games${YOUR_API_KEY}&search=${game_name}`;
-//https://api.rawg.io/api/games?key=cf9a8ce674fa497bb97efa1ab44c260f&search=doom
+// https://api.rawg.io/api/games?key=cf9a8ce674fa497bb97efa1ab44c260f&search=doom

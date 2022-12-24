@@ -18,6 +18,7 @@ const Game = ({ name, released, id, image }) => {
     document.body.style.overflow = "hidden"; // убираем 2 скролл
     dispatch(loadDetail(id));
   };
+  console.log(image);
 
   const strPathId = id.toString();
 
@@ -37,6 +38,7 @@ const Game = ({ name, released, id, image }) => {
           src={smallImage(image, 640)}
           alt={name}
         />
+        {/* <motion.img layoutId={`image ${strPathId}`} src={image} alt={name} /> */}
       </Link>
     </StyledGame>
   );

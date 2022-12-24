@@ -41,7 +41,7 @@ const Nav = () => {
 };
 
 const StyledNav = styled(motion.nav)`
-  padding: 3rem 5rem;
+  padding: 3rem 10rem;
   text-align: center;
   input {
     width: 30%;
