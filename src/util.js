@@ -1,4 +1,5 @@
 // media resize
+import notImage from "./img/not-image.png";
 
 export const smallImage = (imagePath, size) => {
   if (imagePath) {
@@ -10,5 +11,7 @@ export const smallImage = (imagePath, size) => {
       : imagePath.replace("/media/games", `/media/resize/${size}/-/games/`);
 
     return image;
+  } else {
+    return notImage;
   }
 };
