@@ -18,7 +18,6 @@ const Game = ({ name, released, id, image }) => {
     document.body.style.overflow = "hidden"; // убираем 2 скролл
     dispatch(loadDetail(id));
   };
-  console.log(image);
 
   const strPathId = id.toString();
 
