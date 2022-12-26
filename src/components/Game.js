@@ -37,7 +37,6 @@ const Game = ({ name, released, id, image }) => {
           src={smallImage(image, 640)}
           alt={name}
         />
-        {/* <motion.img layoutId={`image ${strPathId}`} src={image} alt={name} /> */}
       </Link>
     </StyledGame>
   );

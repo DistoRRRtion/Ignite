@@ -6,18 +6,19 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { fadeIn } from "../animation.js";
 
-// атрибут layout вместо layoutId <------
-import {
-  motion,
-  AnimatePresence,
-  AnimateSharedLayout,
-  LayoutGroup,
-} from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 // components
 import Game from "../components/Game";
 import GameDetail from "../components/GameDetail";
 
 const Home = () => {
+  useEffect(() =>
+    window.scroll({
+      top: 0,
+      left: 0,
+    })
+  );
+
   // get the current location
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];

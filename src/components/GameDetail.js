@@ -92,11 +92,6 @@ const GameDetail = ({ pathId }) => {
                 src={smallImage(game.background_image, 1280)}
                 alt={game.name}
               />
-              {/* <motion.img
-                layoutId={`image ${pathId}`}
-                src={game.background_image}
-                alt={game.name}
-              /> */}
             </Media>
             <Description>
               <p>{game.description_raw}</p>
@@ -108,12 +103,6 @@ const GameDetail = ({ pathId }) => {
                   alt={game.name}
                   key={screen.id}
                 />
-                // <img
-                //   // src={screen.image}
-                //   src={screen.image}
-                //   alt={game.name}
-                //   key={screen.id}
-                // />
               ))}
             </div>
           </Detail>

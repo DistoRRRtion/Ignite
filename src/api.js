@@ -1,4 +1,3 @@
-// const key = process.env.REACT_APP_RAWG_API;
 const YOUR_API_KEY = `?key=${process.env.REACT_APP_RAWG_API}`;
 
 // getting the date
@@ -10,6 +9,7 @@ const getCurrentMonth = () => {
     return month;
   }
 };
+
 const getCurrentDay = () => {
   const day = new Date().getDate();
   if (day < 10) {
@@ -50,4 +50,3 @@ export const gameScreenshotURL = (game_id) =>
 //🔥 searched game
 export const searchGameURL = (game_name) =>
   `${base_url}games${YOUR_API_KEY}&search=${game_name}&ordering=-rating`;
-// https://api.rawg.io/api/games?key=cf9a8ce674fa497bb97efa1ab44c260f&search=doom
