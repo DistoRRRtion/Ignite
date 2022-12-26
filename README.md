@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# Game Ignite
+
+![image](../../1.png)
+
+Welcome to Game Ignite, the ultimate destination for all your gaming needs! Our site features a wide range of information about the latest and greatest video games, including:
+
+- Popular games: Keep up with the hottest titles and see what everyone is playing.
+- New games: Discover the latest releases and get the scoop on what's coming soon.
+- Games coming soon: Stay ahead of the curve and get the inside track on what's on the horizon.
+
+Plus, with our powerful search feature, you can easily find the games you're looking for. Whether you're a casual gamer or a hardcore fan, Game Ignite has something for everyone.
+
+Check us out today and get your gaming fix! 👉 [Go!](https://ignite-vladimir.netlify.app/)
+
+---
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
