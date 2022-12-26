@@ -3,16 +3,9 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { smallImage } from "../util";
-// images platform
-import playstaion from "../img/playstation.svg";
-import xbox from "../img/xbox.svg";
-import nintendo from "../img/nintendo.svg";
-import steam from "../img/steam.svg";
-import apple from "../img/apple.svg";
-import gamepad from "../img/gamepad.svg";
-// images star
 import starFull from "../img/star-full.png";
 import starEmpty from "../img/star-empty.png";
+import { getPlatform } from "./GetIconPlatform";
 
 const GameDetail = ({ pathId }) => {
   //🔥 data
@@ -26,24 +19,6 @@ const GameDetail = ({ pathId }) => {
     if (element.classList.contains("shadow")) {
       document.body.style.overflow = "auto";
       navigate("/");
-    }
-  };
-
-  //🔥 get platform images
-  const getPlatform = (platform) => {
-    switch (platform) {
-      case "PlayStation 4":
-        return playstaion;
-      case "Xbox One":
-        return xbox;
-      case "Nintendo Switch":
-        return nintendo;
-      case "PC":
-        return steam;
-      case "iOS":
-        return apple;
-      default:
-        return gamepad;
     }
   };
 
@@ -69,7 +44,7 @@ const GameDetail = ({ pathId }) => {
           <Detail layoutId={pathId}>
             <Stats>
               <Rating>
-                <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
+                <GameName layoutId={`title ${pathId}`}>{game.name}</GameName>
                 <p>Rating: {game.rating}</p>
                 {getStars()}
               </Rating>
@@ -149,6 +124,10 @@ const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+const GameName = styled(motion.h3)`
+  font-size: 2rem;
 `;
 
 const Rating = styled(motion.div)`

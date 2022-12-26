@@ -15,7 +15,7 @@ const Game = ({ name, released, id, image }) => {
   // load detail handler
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
-    document.body.style.overflow = "hidden"; // убираем 2 скролл
+    document.body.style.overflow = "hidden"; // delete second scroll bar
     dispatch(loadDetail(id));
   };
 
