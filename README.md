@@ -1,6 +1,6 @@
 # Game Ignite
 
-![image](../../1.png)
+![1](https://user-images.githubusercontent.com/99020542/209580098-0fe20d34-b354-431a-8b25-46aa967d206e.png)
 
 Welcome to Game Ignite, the ultimate destination for all your gaming needs! Our site features a wide range of information about the latest and greatest video games, including:
 
