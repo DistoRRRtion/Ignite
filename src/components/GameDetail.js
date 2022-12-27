@@ -132,18 +132,18 @@ const Detail = styled(motion.div)`
     padding: 2rem 2rem;
   }
   @media (max-width: 1200px) {
-    width: 80%;
-    left: 10%;
+    width: 96%;
+    left: 2%;
     h3 {
       font-size: 1.5rem;
-      padding: 0rem 0rem 1rem 0rem;
+      padding: 1rem 0rem;
     }
     div {
       margin-bottom: 1rem;
     }
   }
   @media (max-width: 700px) {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 `;
 
@@ -159,7 +159,9 @@ const Stats = styled(motion.div)`
 const GameName = styled(motion.h3)`
   font-size: 2rem;
   max-width: 100%;
-  margin-right: 10rem;
+  @media (max-width: 700px) {
+    text-align: center;
+  }
 `;
 
 const Rating = styled(motion.div)`
@@ -189,6 +191,12 @@ const Info = styled(motion.div)`
       font-size: 1rem;
     }
   }
+  @media (max-width: 700px) {
+    h3 {
+      font-size: 1rem;
+      padding: 0rem 0rem 0.3rem 0rem;
+    }
+  }
 `;
 
 const Platforms = styled(motion.div)`
@@ -199,10 +207,6 @@ const Platforms = styled(motion.div)`
   @media (max-width: 1500px) {
     max-height: 3rem;
     max-width: 3rem;
-  }
-  @media (max-width: 1200px) {
-    max-height: 2rem;
-    max-width: 2rem;
   }
   @media (max-width: 700px) {
     max-height: 1.3rem;
@@ -223,7 +227,7 @@ const Media = styled(motion.div)`
 const Description = styled(motion.div)`
   margin: 5rem 0rem;
   @media (max-width: 1000px) {
-    margin: 3rem 0rem;
+    margin: 1rem 0rem;
     p {
       font-size: 1rem;
     }
