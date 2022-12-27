@@ -54,7 +54,8 @@ const StyledNav = styled(motion.nav)`
   @media (max-width: 1024px) {
     input {
       border: 1px solid lightgray;
-      font-size: 1.3rem;
+      max-height: 43.5px;
+      border-radius: none;
     }
   }
   button {
