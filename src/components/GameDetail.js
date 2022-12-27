@@ -6,10 +6,20 @@ import { smallImage } from "../util";
 import starFull from "../img/star-full.png";
 import starEmpty from "../img/star-empty.png";
 import { getPlatform } from "./GetIconPlatform";
+import { useLocation } from "react-router-dom";
 
 const GameDetail = ({ pathId }) => {
   //🔥 data
   const { screen, game, isLoading } = useSelector((state) => state.detail);
+
+  const { pathname } = useLocation();
+
+  const scrollBody = () => {
+    if (pathname === "/") {
+      document.body.style.overflow = "auto";
+    }
+  };
+  scrollBody();
 
   //🔥 exit detail
   const navigate = useNavigate();
